@@ -22,7 +22,7 @@ node {
 
     stage('Push image') {
         
-            sh 'docker login -u gajun755 -p ${dockerhubpass}'
+            sh 'docker login -u gajun755 -p ${dockerhubpassword}'
             app.push("${env.BUILD_NUMBER}")
         
     }
