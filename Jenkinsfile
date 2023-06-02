@@ -22,9 +22,9 @@ node {
 
     stage('Push image') {
         
-        withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com') {
+            sh 'docker login -u gajun755 -p ${dockerhubpass}'
             app.push("${env.BUILD_NUMBER}")
-        }
+        
     }
     
     stage('Trigger ManifestUpdate') {
